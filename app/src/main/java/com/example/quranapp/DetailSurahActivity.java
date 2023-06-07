@@ -16,7 +16,7 @@ public class DetailSurahActivity extends AppCompatActivity {
 
         textViewID = findViewById(R.id.tvIDSurah);
 
-        SurahModel surah = getIntent().getParcelableExtra("Surah");
+        SurahModel surah = getIntent().getParcelableExtra("Chapters");
         textViewID.setText(String.valueOf(surah.getId()));
     }
 }

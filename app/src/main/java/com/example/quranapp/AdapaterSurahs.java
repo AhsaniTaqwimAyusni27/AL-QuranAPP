@@ -37,7 +37,7 @@ public class AdapaterSurahs extends RecyclerView.Adapter<AdapaterSurahs.SurahVie
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(holder.itemView.getContext(), DetailSurahActivity.class);
-                intent.putExtra("Surah", surah);
+                intent.putExtra("Chapters", surah);
                 holder.itemView.getContext().startActivity(intent);
             }
         });

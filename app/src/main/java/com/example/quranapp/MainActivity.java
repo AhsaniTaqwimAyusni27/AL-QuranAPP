@@ -5,10 +5,21 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
+
+import com.example.quranapp.model.Chapters;
+import com.example.quranapp.model.ChaptersItem;
+import com.example.quranapp.retrofit.ApiService;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
+    private final String TAG = "MainActivity";
 
     RecyclerView recyclerView;
     AdapaterSurahs adapaterSurahs;
@@ -27,5 +38,23 @@ public class MainActivity extends AppCompatActivity {
         adapaterSurahs = new AdapaterSurahs(objSurah);
         recyclerView.setAdapter(adapaterSurahs);
         recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+        getDataFromApi();
+    }
+
+    private void getDataFromApi (){
+        ApiService.endpoint().getSurah().enqueue(new Callback<Chapters>() {
+            @Override
+            public void onResponse(Call<Chapters> call, Response<Chapters> response) {
+                if (response.isSuccessful()){
+                    List<ChaptersItem> result = response.body().getChapters();
+                    Log.d(TAG, result.toString());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Chapters> call, Throwable t) {
+                Log.d(TAG, t.toString());
+            }
+        });
     }
 }

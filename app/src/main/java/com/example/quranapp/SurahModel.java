@@ -4,6 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class SurahModel implements Parcelable {
+
     private int id;
     private String nameSimple;
     private String nameArabic;
@@ -48,6 +49,15 @@ public class SurahModel implements Parcelable {
         this.translatedName = translatedName;
     }
 
+    @Override
+    public String toString() {
+        return "SurahModel{" +
+                "id=" + id +
+                ", nameSimple='" + nameSimple + '\'' +
+                ", nameArabic='" + nameArabic + '\'' +
+                ", translatedName=" + translatedName +
+                '}';
+    }
 
     @Override
     public int describeContents() {
