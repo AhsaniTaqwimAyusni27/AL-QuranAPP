@@ -89,7 +89,12 @@ public class SurahModel implements Parcelable {
     };
 }
 class TranslatedName implements Parcelable {
+
     private String name;
+
+    public TranslatedName(String name) {
+        this.name = name;
+    }
 
     public String getName() {
         return name;

@@ -31,7 +31,7 @@ public class AdapaterSurahs extends RecyclerView.Adapter<AdapaterSurahs.SurahVie
 
         holder.textViewSurahLatin.setText(surah.getNameSimple());
         holder.textViewTerjemahanSurah.setText(surah.getTranslatedName().getName());
-        holder.textViewSurahArab.setText(surah.getNameSimple());
+        holder.textViewSurahArab.setText(surah.getNameArabic());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +57,8 @@ public class AdapaterSurahs extends RecyclerView.Adapter<AdapaterSurahs.SurahVie
             textViewSurahLatin = itemView.findViewById(R.id.tvSurahLatin);
             textViewTerjemahanSurah = itemView.findViewById(R.id.tvTerjemahanSurah);
             textViewSurahArab = itemView.findViewById(R.id.tvSurahArab);
+
+
         }
     }
 }
