@@ -7,8 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.example.quranapp.model.Chapters;
-import com.example.quranapp.model.ChaptersItem;
+import com.example.quranapp.Models.SurahModel.Chapters;
+import com.example.quranapp.Models.SurahModel.ChaptersItem;
 import com.example.quranapp.retrofit.ApiService;
 
 import java.util.ArrayList;

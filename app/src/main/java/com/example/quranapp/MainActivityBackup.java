@@ -7,8 +7,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.quranapp.model.Chapters;
-import com.example.quranapp.model.ChaptersItem;
+import com.example.quranapp.Models.SurahModel.Chapters;
+import com.example.quranapp.Models.SurahModel.ChaptersItem;
 import com.example.quranapp.retrofit.ApiService;
 
 import java.util.ArrayList;
@@ -22,7 +22,7 @@ public class MainActivityBackup extends AppCompatActivity {
     private final String TAG = "MainActivity";
 
     RecyclerView recyclerView;
-    AdapaterSurahs adapaterSurahs;
+    AdapterSurahs adapterSurahs;
     ArrayList<SurahModel> objSurah = new ArrayList<>();
 
     @Override
@@ -35,8 +35,8 @@ public class MainActivityBackup extends AppCompatActivity {
         objSurah.add(new SurahModel(2, "Al-Fatihah", "الفاتحة",new TranslatedName("Pembukaan")));
         objSurah.add(new SurahModel(3, "Al-Fatihah", "الفاتحة",new TranslatedName("Pembukaan")));
 
-        adapaterSurahs = new AdapaterSurahs(objSurah);
-        recyclerView.setAdapter(adapaterSurahs);
+        adapterSurahs = new AdapterSurahs(objSurah);
+        recyclerView.setAdapter(adapterSurahs);
         recyclerView.setLayoutManager(new LinearLayoutManager(MainActivityBackup.this));
         getDataFromApi();
     }

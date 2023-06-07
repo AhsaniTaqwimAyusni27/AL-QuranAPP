@@ -1,4 +1,4 @@
-package com.example.quranapp.model;
+package com.example.quranapp.Models.SurahModel;
 
 import com.google.gson.annotations.SerializedName;
 

@@ -11,22 +11,22 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class AdapaterSurahs extends RecyclerView.Adapter<AdapaterSurahs.SurahViewHolder> {
+public class AdapterSurahs extends RecyclerView.Adapter<AdapterSurahs.SurahViewHolder> {
     ArrayList<SurahModel> arrayListSurahs;
 
-    public AdapaterSurahs(ArrayList<SurahModel> arrayListSurahs) {
+    public AdapterSurahs(ArrayList<SurahModel> arrayListSurahs) {
         this.arrayListSurahs = arrayListSurahs;
     }
 
     @NonNull
     @Override
-    public AdapaterSurahs.SurahViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public AdapterSurahs.SurahViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item, parent, false);
         return new SurahViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AdapaterSurahs.SurahViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull AdapterSurahs.SurahViewHolder holder, int position) {
         final SurahModel surah = arrayListSurahs.get(position);
 
         holder.textViewSurahLatin.setText(surah.getNameSimple());
